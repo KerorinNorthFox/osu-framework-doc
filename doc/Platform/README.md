@@ -30,8 +30,10 @@
   - [`DisplayMode` #](#displaymode-)
 - [列挙型](#列挙型)
   - [`ExecutionMode` #](#executionmode-)
+    - [Member](#member)
   - [`ExecutionState` #](#executionstate-)
   - [`GraphicsSurfaceType` #](#graphicssurfacetype-)
+    - [Member](#member-1)
   - [`CursorState` #](#cursorstate-)
   - [`WindowState` #](#windowstate-)
 
@@ -175,7 +177,19 @@ public readonly struct DisplayMode : IEquatable<DisplayMode>
 ## `ExecutionMode` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Platform/ExecutionMode.cs#L8)
 ```csharp
 public enum ExecutionMode
+{
+    [Description("Single thread")]
+    SingleThread,
+
+    [Description("Multithreaded")]
+    MultiThreaded
+}
 ```
+### Member
+|Name|Description|
+|:-|:-|
+|SingleThread|シングルスレッド|
+|MultiThreaded|マルチスレッド|
 
 ## `ExecutionState` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Platform/GameHost.cs#L1487)
 ```csharp
@@ -183,9 +197,42 @@ public enum ExecutionState
 ```
 
 ## `GraphicsSurfaceType` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Platform/GraphicsSurfaceType.cs#L11)
+[IWindow](/osu-framework-doc/doc/Platform/README.md#iwindow)のグラフィックサーフェス。
 ```csharp
 public enum GraphicsSurfaceType
+{
+    /// <summary>
+    /// An OpenGL graphics surface. The window must implement <see cref="IOpenGLGraphicsSurface"/>.
+    /// </summary>
+    [Description("OpenGL")]
+    OpenGL,
+
+    /// <summary>
+    /// A Metal graphics surface. The window must implement <see cref="IMetalGraphicsSurface"/>.
+    /// </summary>
+    [Description("Metal")]
+    Metal,
+
+    /// <summary>
+    /// A Vulkan graphics surface.
+    /// </summary>
+    [Description("Vulkan")]
+    Vulkan,
+
+    /// <summary>
+    /// A Direct3D11 graphics surface.
+    /// </summary>
+    [Description("Direct3D 11")]
+    Direct3D11,
+}
 ```
+### Member
+|Name|Description|
+|:-|:-|
+|OpenGL|OpenGLグラフィックサーフェス。ウィンドウは[IOpenGLGraphicsSurface](/osu-framework-doc/doc/Platform/README.md#iopenglgraphicssurface)を実装する必要がある。|
+|Metal|Metalグラフィックサーフェス。ウィンドウは[IMetalGraphicsSurface](/osu-framework-doc/doc/Platform/README.md#imetalgraphicssurface)を実装する必要がある。|
+|Vulkan|Vulkanグラフィックサーフェス。|
+|Direct3D11|Direct3D11グラフィックサーフェス。|
 
 ## `CursorState` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Platform/OsuTKWindow.cs#L590)
 ```csharp
