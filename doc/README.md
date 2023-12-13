@@ -8,6 +8,7 @@
     - [Property](#property)
     - [Constructor](#constructor)
   - [`Game` #](#game-)
+    - [Inherit](#inherit)
     - [Property](#property-1)
     - [Method](#method)
   - [`Host` #](#host-)
@@ -52,6 +53,13 @@ static FrameworkEnvironment()
 ```csharp
 public abstract partial class Game : Container, IKeyBindingHandler<FrameworkAction>, IKeyBindingHandler<PlatformAction>, IHandleGlobalKeyboardInput
 ```
+### Inherit
+|Name|Description|
+|:-|:-|
+|[Container]()||
+|[IKeyBindingHandler\<FrameworkAction\>]()||
+|[IKeyBindingHandler\<PlatformAction\>]()||
+|[IHandleGlobalKeyboardInput]()||
 ### Property
 |Name|Type|Access|
 |:-|:-|:-|

@@ -20,14 +20,13 @@
 
 # Property
 ## FrameworkEnvironment[.StartupExecutionMode](https://github.com/ppy/osu-framework/blob/master/osu.Framework/FrameworkEnvironment.cs#L11)
-シングルスレッドかマルチスレッドかを判定?
 ```csharp
 public static ExecutionMode? StartupExecutionMode { get; }
 ```
 ### Type
 |Name|Description|
 |:-|:-|
-|[ExecutionMode?](/osu-framework-doc/doc/Platform/README.md#executionmode)|シングルスレッドかマルチスレッドか|
+|[ExecutionMode?](./Platform/README.md#executionmode)|シングルスレッドかマルチスレッドか|
 
 ## FrameworkEnvironment[.NoTestTimeout](https://github.com/ppy/osu-framework/blob/master/osu.Framework/FrameworkEnvironment.cs#L12)
 ```csharp
@@ -63,7 +62,7 @@ public static GraphicsSurfaceType? PreferredGraphicsSurface { get; }
 ### Type
 |Name|Description|
 |:-|:-|
-|[GraphicsSurfaceType?](/osu-framework-doc/doc/Platform/README.md#graphicssurfacetype)|[IWindow](/osu-framework-doc/doc/Platform/README.md#iwindow)のグラフィックサーフェス。|
+|[GraphicsSurfaceType?](./Platform/README.md#graphicssurfacetype)|[IWindow](./Platform/README.md#iwindow)のグラフィックサーフェス。|
 
 ## FrameworkEnvironment[.PreferredGraphicsRenderer](https://github.com/ppy/osu-framework/blob/master/osu.Framework/FrameworkEnvironment.cs#L16)
 ```csharp
