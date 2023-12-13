@@ -34,15 +34,15 @@ public static class FrameworkEnvironment
 ### Property
 |Name|Type|Access|
 |:-|:-|:-|
-|[StartupExecutionMode](/osu-framework-doc/doc/FrameworkEnvironment.md#frameworkenvironmentstartupexecutionmode)|ExecutionMode?|static get|
-|[NoTestTimeout](/osu-framework-doc/doc/FrameworkEnvironment.md#frameworkenvironmentnotesttimeout)|bool|static get|
-|[ForceTestGC](/osu-framework-doc/doc/FrameworkEnvironment.md#frameworkenvironmentforcetestgc)|bool|static get|
-|[FrameStatisticsViaTouch](/osu-framework-doc/doc/FrameworkEnvironment.md#frameworkenvironmentframestatisticsviatouch)|bool|static get|
-|[PreferredGraphicsSurface](/osu-framework-doc/doc/FrameworkEnvironment.md#frameworkenvironmentpreferredgraphicssurface)|GraphicsSurfaceType?|static get|
-|[PreferredGraphicsRenderer](/osu-framework-doc/doc/FrameworkEnvironment.md#frameworkenvironmentpreferredgraphicsrenderer)|string?|static get|
-|[StagingBufferType](/osu-framework-doc/doc/FrameworkEnvironment.md#frameworkenvironmentstagingbuffertype)|int?|static get|
-|[VertexBufferCount](/osu-framework-doc/doc/FrameworkEnvironment.md#frameworkenvironmentvertexbuffercount)|int?|static get|
-|[NoStructuredBuffers](/osu-framework-doc/doc/FrameworkEnvironment.md#frameworkenvironmentnostructuredbuffers)|bool|static get|
+|[StartupExecutionMode](./FrameworkEnvironment.md#frameworkenvironmentstartupexecutionmode)|ExecutionMode?|static get|
+|[NoTestTimeout](./FrameworkEnvironment.md#frameworkenvironmentnotesttimeout)|bool|static get|
+|[ForceTestGC](./FrameworkEnvironment.md#frameworkenvironmentforcetestgc)|bool|static get|
+|[FrameStatisticsViaTouch](./FrameworkEnvironment.md#frameworkenvironmentframestatisticsviatouch)|bool|static get|
+|[PreferredGraphicsSurface](./FrameworkEnvironment.md#frameworkenvironmentpreferredgraphicssurface)|GraphicsSurfaceType?|static get|
+|[PreferredGraphicsRenderer](./FrameworkEnvironment.md#frameworkenvironmentpreferredgraphicsrenderer)|string?|static get|
+|[StagingBufferType](./FrameworkEnvironment.md#frameworkenvironmentstagingbuffertype)|int?|static get|
+|[VertexBufferCount](./FrameworkEnvironment.md#frameworkenvironmentvertexbuffercount)|int?|static get|
+|[NoStructuredBuffers](./FrameworkEnvironment.md#frameworkenvironmentnostructuredbuffers)|bool|static get|
 ### Constructor
 ```csharp
 static FrameworkEnvironment()
@@ -55,14 +55,18 @@ public abstract partial class Game : Container, IKeyBindingHandler<FrameworkActi
 ### Property
 |Name|Type|Access|
 |:-|:-|:-|
-|[Window]()|IWindow||
+|[Window]()|IWindow|public|
 |[Resources]()|ResourceStore<byte[]>|get; private set;|
 |[Textures]()|TextureStore|get; private set;|
 |[DefaultTextureFilteringMode]()|TextureFilteringMode|protected virtual|
-|[IsActive]()|IBindable<bool>||
+|[Host]()|GameHost|protected|
+|[IsActive]()|IBindable<bool>|public|
 |[Audio]()|AudioManager|get; private set;|
 |[Shaders]()|ShaderManager|get; private set;|
 |[Fonts]()|FontStore|get; private set;|
+|[Localisation]()|LocalisationManager|protected get; private set;|
+|[Content]()|Container\<Drawable\>|protected|
+|[FrameStatistics]()|Bindable\<FrameStatisticsMode\>|protected readonly|
 ### Method
 |Name|Return|Access|
 |:-|:-|:-|
@@ -71,14 +75,18 @@ public abstract partial class Game : Container, IKeyBindingHandler<FrameworkActi
 |[GetFrameworkConfigDefaults]()|IDictionary<FrameworkSetting, object>|protected internal virtual|
 |[CreateStorage]()|Storage|protected internal virtual|
 |[SetHost]()|void|virtual|
-|[AddFont]()|void||
-|[OnPressed]()|bool||
-|[OnReleased]()|bool||
+|[CreateChildDependencies]()|IReadOnlyDependencyContainer|protected|
+|[AddFont]()|void|public|
+|[LoadComplete]()|void|protected|
+|[OnPressed]()|bool|public|
+|[CycleFrameStatistics]()|void|protected|
+|[OnReleased]()|bool|public|
 |[OnPressed]()|bool|virtual|
 |[OnReleased]()|void|virtual|
 |[RequestExit]()|void||
 |[Exit]()|void||
 |[OnExiting]()|bool|protected virtual|
+|[Dispose]()|void|protected|
 
 ## `Host` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Host.cs#L15)
 ```csharp

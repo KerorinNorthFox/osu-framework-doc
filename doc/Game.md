@@ -7,8 +7,6 @@ public IWindow Window => Host?.Window;
 |Name|Description|
 |:-|:-|
 |[IWindow](/osu-framework-doc/doc/Platform/README.md#iwindow)|ゲーム ウィンドウのインターフェイス表現。実装固有のコードを隠すことを目的としている。|
-### Access
-使用
 
 ## Game[.Resources](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L35)
 ```csharp
@@ -18,8 +16,6 @@ public ResourceStore<byte[]> Resources { get; private set; }
 |Name|Description|
 |:-|:-|
 |[ResourceStore\<byte[]\>](/osu-framework-doc/doc/IO/Stores/README.md#resourcestoret)||
-### Access
-使用
 
 ## Game[.Textures](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L37)
 ```csharp
@@ -29,8 +25,6 @@ public TextureStore Textures { get; private set; }
 |Name|Description|
 |:-|:-|
 |[TextureStore]()||
-### Access
-使用
 
 ## Game[.DefaultTextureFilteringMode](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L42)
 [Textures]()からフェッチされたすべてのテクスチャに使用するフィルタリング モード。
@@ -41,8 +35,15 @@ protected virtual TextureFilteringMode DefaultTextureFilteringMode => TextureFil
 |Name|Description|
 |:-|:-|
 |[TextureFilteringMode]()||
-### Access
-継承先で使用かオーバーライドして使用
+
+## Game[.Host](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L44)
+```csharp
+protected GameHost Host { get; private set; }
+```
+### Type
+|Name|Description|
+|:-|:-|
+|[GameHost]()||
 
 ## Game[.IsActive](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L51)
 ゲームがアクティブであるかどうか。(フォアグラウンドで)
@@ -53,8 +54,6 @@ public IBindable<bool> IsActive => isActive;
 |Name|Description|
 |:-|:-|
 |[IBindable\<bool\>]()||
-### Access
-使用
 
 ## Game[.Audio](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L53)
 ```csharp
@@ -64,8 +63,6 @@ public AudioManager Audio { get; private set; }
 |Name|Description|
 |:-|:-|
 |[AudioManager]()||
-### Access
-使用
 
 ## Game[.Shaders](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L55)
 ```csharp
@@ -75,8 +72,6 @@ public ShaderManager Shaders { get; private set; }
 |Name|Description|
 |:-|:-|
 |[ShaderManager]()||
-### Access
-使用
 
 ## Game[.Fonts](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L63)
 ゲーム全体でアクセスできるフォントを含むストア。<br>
@@ -88,8 +83,29 @@ public FontStore Fonts { get; private set; }
 |Name|Description|
 |:-|:-|
 |[FontStore]()||
-### Access
-使用
+
+## Game[.Localisation](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L67)
+```csharp
+protected LocalisationManager Localisation { get; private set; }
+```
+### Type
+|Name|Description|
+|:-|:-|
+|[LocalisationManager]()||
+
+## Game[.Content](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L81)
+```csharp
+protected override Container<Drawable> Content => content;
+```
+### Type
+|Name|Description|
+|:-|:-|
+|[Container\<Drawable\>]()||
+
+## Game[.FrameStatistics](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L282)
+```csharp
+protected readonly Bindable<FrameStatisticsMode> FrameStatistics = new Bindable<FrameStatisticsMode>();
+```
 
 
 # Method
@@ -106,8 +122,6 @@ protected virtual LocalisationManager CreateLocalisationManager(FrameworkConfigM
 |Type|Description|
 |:-|:-|
 |[LocalisationManager]()||
-### Access
-継承先で使用かオーバーライドして使用
 
 ## Game[.CreateUserInputManager](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L89)
 ```csharp
@@ -117,8 +131,6 @@ protected internal virtual UserInputManager CreateUserInputManager() => new User
 |Type|Description|
 |:-|:-|
 |[UserInputManager]()||
-### Access
-継承先で使用かオーバーライドして使用
 
 ## Game[.GetFrameworkConfigDefaults](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L97)
 osu-framework によって提供されるデフォルトをオーバーライドする必要がある[FrameworkSetting]()デフォルトを提供する。<br>
@@ -130,8 +142,6 @@ protected internal virtual IDictionary<FrameworkSetting, object> GetFrameworkCon
 |Type|Description|
 |:-|:-|
 |[IDictionary<FrameworkSetting, object>]()||
-### Access
-継承先で使用かオーバーライドして使用
 
 ## Game[.CreateStorage](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L105)
 この[Game]()が存在する[Storage]()を作成する。
@@ -147,8 +157,6 @@ protected internal virtual Storage CreateStorage(GameHost host, Storage defaultS
 |Type|Description|
 |:-|:-|
 |[Storage]()|[Storage]()参照|
-### Access
-継承先で使用かオーバーライドして使用
 
 ## Game[.SetHost](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L135)
 Load はホストの作成後に実行されるため、このメソッドをオーバーライドして、ホスト自体がユーザーに表示される前にホストのプロパティを変更できる。
@@ -159,8 +167,20 @@ public virtual void SetHost(GameHost host)
 |Name|Type|Description|
 |:-|:-|:-|
 |`host`|[GameHost]()||
-### Access
-使用かオーバーライドして使用
+
+## Game[.CreateChildDependencies](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L145)
+```csharp
+protected override IReadOnlyDependencyContainer CreateChildDependencies(IReadOnlyDependencyContainer parent) =>
+    dependencies = new DependencyContainer(base.CreateChildDependencies(parent));
+```
+### Arguments
+|Name|Type|Description|
+|:-|:-|:-|
+|`parent`|[IReadOnlyDependencyContainer]()||
+### Return
+|Type|Description|
+|:-|:-|
+|[IReadOnlyDependencyContainer]()||
 
 ## Game[.AddFont](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L243)
 ゲームにグローバルにアクセスできるようにフォントを追加する。
@@ -174,8 +194,11 @@ public void AddFont(ResourceStore<byte[]> store, string assetName = null, FontSt
 |`store`|[ResourceStore<byte[]>]()|フォントリソースを含むバッキングストア。|
 |`assetName` = null|string|フォントのベース名。|
 |`target` = null|[FontStore]()|フォントを追加するオプションのターゲットストア。指定しない場合は、[Fonts]()が使用される。|
-### Access
-使用
+
+## Game[.LoadComplete](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L249)
+```csharp
+protected override void LoadComplete()
+```
 
 ## Game[.OnPressed](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L294)
 ```csharp
@@ -189,8 +212,11 @@ public bool OnPressed(KeyBindingPressEvent<FrameworkAction> e)
 |Type|Description|
 |:-|:-|
 |bool||
-### Access
-使用
+
+## Game[.CycleFrameStatistics](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L401)
+```csharp
+protected void CycleFrameStatistics()
+```
 
 ## Game[.OnReleased](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L429)
 ```csharp
@@ -200,7 +226,58 @@ public void OnReleased(KeyBindingReleaseEvent<FrameworkAction> e)
 |Name|Type|Description|
 |:-|:-|:-|
 |`e`|[KeyBindingReleaseEvent\<FrameworkAction\>]()||
-### Access
-使用
 
-TODO: protectedなプロパティやメソッドもdocに含め、Accessは「継承して使用」にする
+## Game[.OnPressed](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L433)
+```csharp
+public virtual bool OnPressed(KeyBindingPressEvent<PlatformAction> e)
+```
+### Arguments
+|Name|Type|Description|
+|:-|:-|:-|
+|`e`|[KeyBindingPressEvent\<PlatformAction\>]()||
+### Return
+|Type|Description|
+|:-|:-|
+|bool||
+
+## Game[.OnReleased](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L448)
+```csharp
+public virtual void OnReleased(KeyBindingReleaseEvent<PlatformAction> e)
+```
+### Arguments
+|Name|Type|Description|
+|:-|:-|:-|
+|`e`|[KeyBindingReleaseEvent\<PlatformAction\>]()||
+
+## Game[.RequestExit](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L455)
+ゲームの終了を要求する。この終了は、[OnExiting]()によってブロックできる。
+```csharp
+public void RequestExit()
+```
+
+## Game[.Exit](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L464)
+[OnExiting]()戻り値を無視して、ゲームを強制終了する。
+```csharp
+public void Exit()
+```
+
+## Game[.OnExiting](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L477)
+終了が要求されたときに発生する。<br>
+通常、[PlatformAction.Exit]()またはウィンドウを閉じる(X)ボタンが押されたときに発生する。<br>
+終了プロセスをブロックするには、`true`を返す。
+```csharp
+protected virtual bool OnExiting() => false;
+```
+### Return
+|Type|Description|
+|:-|:-|
+|bool||
+
+## Game[.Dispose](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L479)
+```csharp
+protected override void Dispose(bool isDisposing)
+```
+### Arguments
+|Name|Type|Description|
+|:-|:-|:-|
+|`isDisposing`|bool||
