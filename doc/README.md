@@ -2,30 +2,53 @@
 - [osu.Framework Doc](#osuframework-doc)
 - [Interface](#interface)
   - [`IStateful<T>` #](#istatefult-)
+    - [Where](#where)
+    - [Event](#event)
+    - [Property](#property)
   - [`IUpdateable` #](#iupdateable-)
+    - [Method](#method)
 - [Class](#class)
   - [`FrameworkEnvironment` #](#frameworkenvironment-)
-    - [Property](#property)
+    - [Property](#property-1)
     - [Constructor](#constructor)
   - [`Game` #](#game-)
     - [Inherit](#inherit)
-    - [Property](#property-1)
-    - [Method](#method)
+    - [Property](#property-2)
+    - [Method](#method-1)
   - [`Host` #](#host-)
+    - [Method](#method-2)
   - [`HostOptions` #](#hostoptions-)
+    - [Property](#property-3)
   - [`RuntimeInfo` #](#runtimeinfo-)
 
 # Interface
 ## `IStateful<T>` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/IStateful.cs#L12)
+状態を持ち、外部コンシューマが現在の状態を変更できるようにするオブジェクト。
 ```csharp
 public interface IStateful<T>
     where T : struct
 ```
+### Where
+|Type|Description|
+|:-|:-|
+|T|通常、このインターフェイスを実装するクラスに対してローカルな列挙型。|
+### Event
+|Name|Type|Access|
+|:-|:-|:-|
+|[StateChanged]()|Action\<T\>||
+### Property
+|Name|Type|Access|
+|:-|:-|:-|
+|[State]()|T||
 
 ## `IUpdateable` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/IUpdateable.cs#L6)
 ```csharp
 public interface IUpdateable
 ```
+### Method
+|Name|Type|Access|
+|:-|:-|:-|
+|[Update]()|void||
 
 # Class
 ## `FrameworkEnvironment` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/FrameworkEnvironment.cs#L9)
@@ -91,8 +114,8 @@ public abstract partial class Game : Container, IKeyBindingHandler<FrameworkActi
 |[OnReleased]()|bool|public|
 |[OnPressed]()|bool|virtual|
 |[OnReleased]()|void|virtual|
-|[RequestExit]()|void||
-|[Exit]()|void||
+|[RequestExit]()|void|public|
+|[Exit]()|void|public|
 |[OnExiting]()|bool|protected virtual|
 |[Dispose]()|void|protected|
 
@@ -100,11 +123,22 @@ public abstract partial class Game : Container, IKeyBindingHandler<FrameworkActi
 ```csharp
 public static class Host
 ```
+### Method
+|Name|Return|Access|
+|:-|:-|:-|
+|[GetSuitableDesktopHost]()|DesktopGameHost|static|
 
 ## `HostOptions` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/HostOptions.cs#L11)
+[Host]()のさまざまな構成プロパティ。
 ```csharp
 public class HostOptions
 ```
+### Property
+|Name|Type|Access|
+|:-|:-|:-|
+|[BindIPC]()|bool|public|
+|[PortableInstallation]()|bool|public|
+|[BypassCompositor]()|bool|public|
 
 ## `RuntimeInfo` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/RuntimeInfo.cs#L10)
 ```csharp
