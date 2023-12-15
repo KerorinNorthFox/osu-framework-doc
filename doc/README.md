@@ -11,42 +11,42 @@
   - [`RuntimeInfo` #](#runtimeinfo-)
 
 # Interface
-## `IStateful<T>` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/IStateful.cs#L12)
+## `IStateful<T>` [#](./IStateful.md)
 状態を持ち、外部コンシューマが現在の状態を変更できるようにするオブジェクト。
 ```csharp
 public interface IStateful<T>
     where T : struct
 ```
 
-## `IUpdateable` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/IUpdateable.cs#L6)
+## `IUpdateable` [#](./IUpdateable.md)
 ```csharp
 public interface IUpdateable
 ```
 
 
 # Class
-## `FrameworkEnvironment` [#]()
+## `FrameworkEnvironment` [#](./FrameworkEnvironment.md)
 ```csharp
 public static class FrameworkEnvironment
 ```
 
-## `Game` [#]()
+## `Game` [#](./Game.md)
 ```csharp
 public abstract partial class Game : Container, IKeyBindingHandler<FrameworkAction>, IKeyBindingHandler<PlatformAction>, IHandleGlobalKeyboardInput
 ```
 
-## `Host` [#]()
+## `Host` [#](./Host.md)
 ```csharp
 public static class Host
 ```
 
-## `HostOptions` [#]()
+## `HostOptions` [#](./HostOptions.md)
 [Host]()のさまざまな構成プロパティ。
 ```csharp
 public class HostOptions
 ```
 
-## `RuntimeInfo` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/RuntimeInfo.cs#L10)
+## `RuntimeInfo` [#](./RuntimeInfo.md)
 ```csharp
 public static class RuntimeInfo
 ```

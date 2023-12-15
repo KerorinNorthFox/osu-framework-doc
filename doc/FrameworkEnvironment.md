@@ -1,33 +1,35 @@
 - [Class FrameworkEnvironment #](#class-frameworkenvironment-)
   - [Namespace](#namespace)
   - [Syntax](#syntax)
+  - [Constructor](#constructor)
+      - [Declaration](#declaration)
   - [Properties](#properties)
     - [StartupExecutionMode](#startupexecutionmode)
-      - [Declaration](#declaration)
+      - [Declaration](#declaration-1)
       - [Type](#type)
     - [NoTestTimeout](#notesttimeout)
-      - [Declaration](#declaration-1)
+      - [Declaration](#declaration-2)
       - [Type](#type-1)
     - [ForceTestGC](#forcetestgc)
-      - [Declaration](#declaration-2)
+      - [Declaration](#declaration-3)
       - [Type](#type-2)
     - [FrameStatisticsViaTouch](#framestatisticsviatouch)
-      - [Declaration](#declaration-3)
+      - [Declaration](#declaration-4)
       - [Type](#type-3)
     - [PreferredGraphicsSurface](#preferredgraphicssurface)
-      - [Declaration](#declaration-4)
+      - [Declaration](#declaration-5)
       - [Type](#type-4)
     - [PreferredGraphicsRenderer](#preferredgraphicsrenderer)
-      - [Declaration](#declaration-5)
+      - [Declaration](#declaration-6)
       - [Type](#type-5)
     - [StagingBufferType](#stagingbuffertype)
-      - [Declaration](#declaration-6)
+      - [Declaration](#declaration-7)
       - [Type](#type-6)
     - [VertexBufferCount](#vertexbuffercount)
-      - [Declaration](#declaration-7)
+      - [Declaration](#declaration-8)
       - [Type](#type-7)
     - [NoStructuredBuffers](#nostructuredbuffers)
-      - [Declaration](#declaration-8)
+      - [Declaration](#declaration-9)
       - [Type](#type-8)
 
 
@@ -41,6 +43,13 @@ osu.Framework
 ## Syntax
 ```csharp
 public static class FrameworkEnvironment
+```
+
+
+## Constructor
+#### Declaration
+```csharp
+static FrameworkEnvironment()
 ```
 
 
