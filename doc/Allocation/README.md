@@ -6,7 +6,7 @@
   - [`IReadOnlyDependencyContainer` #](#ireadonlydependencycontainer-)
   - [`ISourceGeneratedDependencyActivator` #](#isourcegenerateddependencyactivator-)
   - [`ISourceGeneratedLongRunningLoadCache` #](#isourcegeneratedlongrunningloadcache-)
-- [クラス](#クラス)
+- [Class](#class)
   - [`BackgroundDependencyLoaderAttribute` #](#backgrounddependencyloaderattribute-)
   - [`CachedAttribute` #](#cachedattribute-)
   - [`NullDependencyException` #](#nulldependencyexception-)
@@ -67,23 +67,19 @@ public interface ISourceGeneratedLongRunningLoadCache
 ```
 
 
-
-
-
-
-
-# クラス
-## `BackgroundDependencyLoaderAttribute` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/BackgroundDependencyLoaderAttribute.cs#L23)
+# Class
+## `BackgroundDependencyLoaderAttribute` [#](./BackgroundDependencyLoaderAttribute.md)
+メソッドを[Graphics.Drawable]()の (非同期の可能性がある) 初期化メソッドとしてマークし、メソッドのパラメーターを介して依存関係を自動的に挿入できるようにする。
 ```csharp
 public class BackgroundDependencyLoaderAttribute : Attribute
 ```
 
-## `CachedAttribute` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/CachedAttribute.cs#L55)
+## `CachedAttribute` [#](./CachedAttribute.md)
 ```csharp
 public class CachedAttribute : Attribute
 ```
 
-## `NullDependencyException` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/CachedAttribute.cs#L218)
+## `NullDependencyException` [#](./CachedAttribute.md#class-nulldependencyexception)
 ```csharp
 public sealed class NullDependencyException : InvalidOperationException
 ```
@@ -191,7 +187,7 @@ public class TripleBuffer<T>
 
 
 # 構造体
-## `CacheInfo` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/CacheInfo.cs#L11)
+## `CacheInfo` [#](./CacheInfo.md)
 ```csharp
 public readonly struct CacheInfo : IEquatable<CacheInfo>
 ```
