@@ -1,344 +1,456 @@
-- [Property](#property)
-  - [Game.Window](#gamewindow)
-    - [Type](#type)
-  - [Game.Resources](#gameresources)
-    - [Type](#type-1)
-  - [Game.Textures](#gametextures)
-    - [Type](#type-2)
-  - [Game.DefaultTextureFilteringMode](#gamedefaulttexturefilteringmode)
-    - [Type](#type-3)
-  - [Game.Host](#gamehost)
-    - [Type](#type-4)
-  - [Game.IsActive](#gameisactive)
-    - [Type](#type-5)
-  - [Game.Audio](#gameaudio)
-    - [Type](#type-6)
-  - [Game.Shaders](#gameshaders)
-    - [Type](#type-7)
-  - [Game.Fonts](#gamefonts)
-    - [Type](#type-8)
-  - [Game.Localisation](#gamelocalisation)
-    - [Type](#type-9)
-  - [Game.Content](#gamecontent)
-    - [Type](#type-10)
-  - [Game.FrameStatistics](#gameframestatistics)
-- [Method](#method)
-  - [Game.CreateLocalisationManager](#gamecreatelocalisationmanager)
-    - [Arguments](#arguments)
-    - [Return](#return)
-  - [Game.CreateUserInputManager](#gamecreateuserinputmanager)
-    - [Return](#return-1)
-  - [Game.GetFrameworkConfigDefaults](#gamegetframeworkconfigdefaults)
-    - [Return](#return-2)
-  - [Game.CreateStorage](#gamecreatestorage)
-    - [Arguments](#arguments-1)
-    - [Return](#return-3)
-  - [Game.SetHost](#gamesethost)
-    - [Arguments](#arguments-2)
-  - [Game.CreateChildDependencies](#gamecreatechilddependencies)
-    - [Arguments](#arguments-3)
-    - [Return](#return-4)
-  - [Game.AddFont](#gameaddfont)
-    - [Arguments](#arguments-4)
-  - [Game.LoadComplete](#gameloadcomplete)
-  - [Game.OnPressed](#gameonpressed)
-    - [Arguments](#arguments-5)
-    - [Return](#return-5)
-  - [Game.CycleFrameStatistics](#gamecycleframestatistics)
-  - [Game.OnReleased](#gameonreleased)
-    - [Arguments](#arguments-6)
-  - [Game.OnPressed](#gameonpressed-1)
-    - [Arguments](#arguments-7)
-    - [Return](#return-6)
-  - [Game.OnReleased](#gameonreleased-1)
-    - [Arguments](#arguments-8)
-  - [Game.RequestExit](#gamerequestexit)
-  - [Game.Exit](#gameexit)
-  - [Game.OnExiting](#gameonexiting)
-    - [Return](#return-7)
-  - [Game.Dispose](#gamedispose)
-    - [Arguments](#arguments-9)
+- [Class Game #](#class-game-)
+  - [Namespace](#namespace)
+  - [Implements](#implements)
+  - [Syntax](#syntax)
+  - [Properties](#properties)
+    - [Window](#window)
+      - [Declaration](#declaration)
+      - [Type](#type)
+    - [Resources](#resources)
+      - [Declaration](#declaration-1)
+      - [Type](#type-1)
+    - [Textures](#textures)
+      - [Declaration](#declaration-2)
+      - [Type](#type-2)
+    - [DefaultTextureFilteringMode](#defaulttexturefilteringmode)
+      - [Declaration](#declaration-3)
+      - [Type](#type-3)
+    - [Host](#host)
+      - [Declaration](#declaration-4)
+      - [Type](#type-4)
+    - [IsActive](#isactive)
+      - [Declaration](#declaration-5)
+      - [Type](#type-5)
+    - [Audio](#audio)
+      - [Declaration](#declaration-6)
+      - [Type](#type-6)
+    - [Shaders](#shaders)
+      - [Declaration](#declaration-7)
+      - [Type](#type-7)
+    - [Fonts](#fonts)
+      - [Declaration](#declaration-8)
+      - [Type](#type-8)
+    - [Localisation](#localisation)
+      - [Declaration](#declaration-9)
+      - [Type](#type-9)
+    - [Content](#content)
+      - [Declaration](#declaration-10)
+      - [Type](#type-10)
+    - [FrameStatistics](#framestatistics)
+      - [Declaration](#declaration-11)
+  - [Methods](#methods)
+    - [CreateLocalisationManager](#createlocalisationmanager)
+      - [Declaration](#declaration-12)
+      - [Arguments](#arguments)
+      - [Return](#return)
+    - [CreateUserInputManager](#createuserinputmanager)
+      - [Declaration](#declaration-13)
+      - [Return](#return-1)
+    - [GetFrameworkConfigDefaults](#getframeworkconfigdefaults)
+      - [Declaration](#declaration-14)
+      - [Return](#return-2)
+    - [CreateStorage](#createstorage)
+      - [Declaration](#declaration-15)
+      - [Arguments](#arguments-1)
+      - [Return](#return-3)
+    - [SetHost](#sethost)
+      - [Declaration](#declaration-16)
+      - [Arguments](#arguments-2)
+    - [CreateChildDependencies](#createchilddependencies)
+      - [Declaration](#declaration-17)
+      - [Arguments](#arguments-3)
+      - [Return](#return-4)
+    - [AddFont](#addfont)
+      - [Declaration](#declaration-18)
+      - [Arguments](#arguments-4)
+    - [LoadComplete](#loadcomplete)
+      - [Declaration](#declaration-19)
+    - [OnPressed](#onpressed)
+      - [Declaration](#declaration-20)
+      - [Arguments](#arguments-5)
+      - [Return](#return-5)
+    - [CycleFrameStatistics](#cycleframestatistics)
+      - [Declaration](#declaration-21)
+    - [OnReleased](#onreleased)
+      - [Declaration](#declaration-22)
+      - [Arguments](#arguments-6)
+    - [OnPressed](#onpressed-1)
+      - [Declaration](#declaration-23)
+      - [Arguments](#arguments-7)
+      - [Return](#return-6)
+    - [OnReleased](#onreleased-1)
+      - [Declaration](#declaration-24)
+      - [Arguments](#arguments-8)
+    - [RequestExit](#requestexit)
+      - [Declaration](#declaration-25)
+    - [Exit](#exit)
+      - [Declaration](#declaration-26)
+    - [OnExiting](#onexiting)
+      - [Declaration](#declaration-27)
+      - [Return](#return-7)
+    - [Dispose](#dispose)
+      - [Declaration](#declaration-28)
+      - [Arguments](#arguments-9)
 
-# Property
-## Game[.Window](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L33)
+
+# Class Game [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L31)
+
+
+## Namespace
+osu.Framework
+
+
+## Implements
+[Container]()<br>
+[IKeyBindingHandler\<FrameworkAction\>]()<br>
+[IKeyBindingHandler\<PlatformAction\>]()<br>
+[IHandleGlobalKeyboardInput]()<br>
+
+
+## Syntax
+```csharp
+public abstract partial class Game : Container, IKeyBindingHandler<FrameworkAction>, IKeyBindingHandler<PlatformAction>, IHandleGlobalKeyboardInput
+```
+
+
+## Properties
+
+### Window
+#### Declaration
 ```csharp
 public IWindow Window => Host?.Window;
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
-|[IWindow](/osu-framework-doc/doc/Platform/README.md#iwindow)|ゲーム ウィンドウのインターフェイス表現。実装固有のコードを隠すことを目的としている。|
+|[IWindow]()|ゲーム ウィンドウのインターフェイス表現。実装固有のコードを隠すことを目的としている。|
 
-## Game[.Resources](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L35)
+---
+### Resources
+#### Declaration
 ```csharp
 public ResourceStore<byte[]> Resources { get; private set; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
-|[ResourceStore\<byte[]\>](/osu-framework-doc/doc/IO/Stores/README.md#resourcestoret)||
+|[ResourceStore\<byte[]\>]()||
 
-## Game[.Textures](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L37)
+---
+### Textures
+#### Declaration
 ```csharp
 public TextureStore Textures { get; private set; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |[TextureStore]()||
 
-## Game[.DefaultTextureFilteringMode](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L42)
+---
+### DefaultTextureFilteringMode
 [Textures]()からフェッチされたすべてのテクスチャに使用するフィルタリング モード。
+#### Declaration
 ```csharp
 protected virtual TextureFilteringMode DefaultTextureFilteringMode => TextureFilteringMode.Linear;
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |[TextureFilteringMode]()||
 
-## Game[.Host](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L44)
+---
+### Host
+#### Declaration
 ```csharp
 protected GameHost Host { get; private set; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |[GameHost]()||
 
-## Game[.IsActive](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L51)
+---
+### IsActive
 ゲームがアクティブであるかどうか。(フォアグラウンドで)
+#### Declaration
 ```csharp
 public IBindable<bool> IsActive => isActive;
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |[IBindable\<bool\>]()||
 
-## Game[.Audio](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L53)
+---
+### Audio
+#### Declaration
 ```csharp
 public AudioManager Audio { get; private set; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |[AudioManager]()||
 
-## Game[.Shaders](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L55)
+---
+### Shaders
+#### Declaration
 ```csharp
 public ShaderManager Shaders { get; private set; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |[ShaderManager]()||
 
-## Game[.Fonts](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L63)
+---
+### Fonts
 ゲーム全体でアクセスできるフォントを含むストア。<br>
 新しいフォントを追加するときは、[AddFont]()を使用することをお勧めする。
+#### Declaration
 ```csharp
 public FontStore Fonts { get; private set; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |[FontStore]()||
 
-## Game[.Localisation](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L67)
+---
+### Localisation
+#### Declaration
 ```csharp
 protected LocalisationManager Localisation { get; private set; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |[LocalisationManager]()||
 
-## Game[.Content](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L81)
+---
+### Content
+#### Declaration
 ```csharp
 protected override Container<Drawable> Content => content;
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |[Container\<Drawable\>]()||
 
-## Game[.FrameStatistics](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L282)
+---
+### FrameStatistics
+#### Declaration
 ```csharp
 protected readonly Bindable<FrameStatisticsMode> FrameStatistics = new Bindable<FrameStatisticsMode>();
 ```
 
 
-# Method
-## Game[.CreateLocalisationManager](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L87)
+## Methods
+
+### CreateLocalisationManager
 新しい[LocalisationManager]()を作成する。
+#### Declaration
 ```csharp
 protected virtual LocalisationManager CreateLocalisationManager(FrameworkConfigManager frameworkConfig) => new LocalisationManager(frameworkConfig);
 ```
-### Arguments
+#### Arguments
 |Name|Type|Description|
 |:-|:-|:-|
 |`frameworkConfig`|[FrameworkConfigManager]()|フレームワーク構成マネージャー。|
-### Return
+#### Return
 |Type|Description|
 |:-|:-|
 |[LocalisationManager]()||
 
-## Game[.CreateUserInputManager](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L89)
+---
+### CreateUserInputManager
+#### Declaration
 ```csharp
 protected internal virtual UserInputManager CreateUserInputManager() => new UserInputManager();
 ```
-### Return
+#### Return
 |Type|Description|
 |:-|:-|
 |[UserInputManager]()||
 
-## Game[.GetFrameworkConfigDefaults](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L97)
+---
+### GetFrameworkConfigDefaults
 osu-framework によって提供されるデフォルトをオーバーライドする必要がある[FrameworkSetting]()デフォルトを提供する。<br>
 予想される型については、[こちら](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Configuration/FrameworkConfigManager.cs)を確認。
+#### Declaration
 ```csharp
 protected internal virtual IDictionary<FrameworkSetting, object> GetFrameworkConfigDefaults() => null;
 ```
-### Return
+#### Return
 |Type|Description|
 |:-|:-|
 |[IDictionary<FrameworkSetting, object>]()||
 
-## Game[.CreateStorage](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L105)
+---
+### CreateStorage
 この[Game]()が存在する[Storage]()を作成する。
+#### Declaration
 ```csharp
 protected internal virtual Storage CreateStorage(GameHost host, Storage defaultStorage) => defaultStorage;
 ```
-### Arguments
+#### Arguments
 |Name|Type|Description|
 |:-|:-|:-|
 |`host`|[GameHost]()|[GameHost]()参照|
 |`defaultStorage`|[Storage]()|カスタム[Storage]()が必要ない場合に使用されるデフォルトの[Storage]()。|
-### Return
+#### Return
 |Type|Description|
 |:-|:-|
 |[Storage]()|[Storage]()参照|
 
-## Game[.SetHost](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L135)
+---
+### SetHost
 Load はホストの作成後に実行されるため、このメソッドをオーバーライドして、ホスト自体がユーザーに表示される前にホストのプロパティを変更できる。
+#### Declaration
 ```csharp
 public virtual void SetHost(GameHost host)
 ```
-### Arguments
+#### Arguments
 |Name|Type|Description|
 |:-|:-|:-|
 |`host`|[GameHost]()||
 
-## Game[.CreateChildDependencies](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L145)
+---
+### CreateChildDependencies
+#### Declaration
 ```csharp
 protected override IReadOnlyDependencyContainer CreateChildDependencies(IReadOnlyDependencyContainer parent) =>
     dependencies = new DependencyContainer(base.CreateChildDependencies(parent));
 ```
-### Arguments
+#### Arguments
 |Name|Type|Description|
 |:-|:-|:-|
 |`parent`|[IReadOnlyDependencyContainer]()||
-### Return
+#### Return
 |Type|Description|
 |:-|:-|
 |[IReadOnlyDependencyContainer]()||
 
-## Game[.AddFont](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L243)
+---
+### AddFont
 ゲームにグローバルにアクセスできるようにフォントを追加する。
+#### Declaration
 ```csharp
 public void AddFont(ResourceStore<byte[]> store, string assetName = null, FontStore target = null)
     => addFont(target ?? Fonts, store, assetName);
 ```
-### Arguments
+#### Arguments
 |Name|Type|Description|
 |:-|:-|:-|
 |`store`|[ResourceStore<byte[]>]()|フォントリソースを含むバッキングストア。|
 |`assetName` = null|string|フォントのベース名。|
 |`target` = null|[FontStore]()|フォントを追加するオプションのターゲットストア。指定しない場合は、[Fonts]()が使用される。|
 
-## Game[.LoadComplete](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L249)
+---
+### LoadComplete
+#### Declaration
 ```csharp
 protected override void LoadComplete()
 ```
 
-## Game[.OnPressed](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L294)
+---
+### OnPressed
+#### Declaration
 ```csharp
 public bool OnPressed(KeyBindingPressEvent<FrameworkAction> e)
 ```
-### Arguments
+#### Arguments
 |Name|Type|Description|
 |:-|:-|:-|
 |`e`|[KeyBindingPressEvent\<FrameworkAction\>]()||
-### Return
+#### Return
 |Type|Description|
 |:-|:-|
 |bool||
 
-## Game[.CycleFrameStatistics](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L401)
+---
+### CycleFrameStatistics
+#### Declaration
 ```csharp
 protected void CycleFrameStatistics()
 ```
 
-## Game[.OnReleased](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L429)
+---
+### OnReleased
+#### Declaration
 ```csharp
 public void OnReleased(KeyBindingReleaseEvent<FrameworkAction> e)
 ```
-### Arguments
+#### Arguments
 |Name|Type|Description|
 |:-|:-|:-|
 |`e`|[KeyBindingReleaseEvent\<FrameworkAction\>]()||
 
-## Game[.OnPressed](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L433)
+---
+### OnPressed
+#### Declaration
 ```csharp
 public virtual bool OnPressed(KeyBindingPressEvent<PlatformAction> e)
 ```
-### Arguments
+#### Arguments
 |Name|Type|Description|
 |:-|:-|:-|
 |`e`|[KeyBindingPressEvent\<PlatformAction\>]()||
-### Return
+#### Return
 |Type|Description|
 |:-|:-|
 |bool||
 
-## Game[.OnReleased](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L448)
+---
+### OnReleased
+#### Declaration
 ```csharp
 public virtual void OnReleased(KeyBindingReleaseEvent<PlatformAction> e)
 ```
-### Arguments
+#### Arguments
 |Name|Type|Description|
 |:-|:-|:-|
 |`e`|[KeyBindingReleaseEvent\<PlatformAction\>]()||
 
-## Game[.RequestExit](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L455)
+---
+### RequestExit
 ゲームの終了を要求する。この終了は、[OnExiting]()によってブロックできる。
+#### Declaration
 ```csharp
 public void RequestExit()
 ```
 
-## Game[.Exit](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L464)
+---
+### Exit
 [OnExiting]()戻り値を無視して、ゲームを強制終了する。
+#### Declaration
 ```csharp
 public void Exit()
 ```
 
-## Game[.OnExiting](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L477)
+---
+### OnExiting
 終了が要求されたときに発生する。<br>
 通常、[PlatformAction.Exit]()またはウィンドウを閉じる(X)ボタンが押されたときに発生する。<br>
 終了プロセスをブロックするには、`true`を返す。
+#### Declaration
 ```csharp
 protected virtual bool OnExiting() => false;
 ```
-### Return
+#### Return
 |Type|Description|
 |:-|:-|
 |bool||
 
-## Game[.Dispose](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L479)
+---
+### Dispose
+#### Declaration
 ```csharp
 protected override void Dispose(bool isDisposing)
 ```
-### Arguments
+#### Arguments
 |Name|Type|Description|
 |:-|:-|:-|
 |`isDisposing`|bool||

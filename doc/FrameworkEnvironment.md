@@ -1,101 +1,145 @@
-- [Property](#property)
-  - [FrameworkEnvironment.StartupExecutionMode](#frameworkenvironmentstartupexecutionmode)
-    - [Type](#type)
-  - [FrameworkEnvironment.NoTestTimeout](#frameworkenvironmentnotesttimeout)
-    - [Type](#type-1)
-  - [FrameworkEnvironment.ForceTestGC](#frameworkenvironmentforcetestgc)
-    - [Type](#type-2)
-  - [FrameworkEnvironment.FrameStatisticsViaTouch](#frameworkenvironmentframestatisticsviatouch)
-    - [Type](#type-3)
-  - [FrameworkEnvironment.PreferredGraphicsSurface](#frameworkenvironmentpreferredgraphicssurface)
-    - [Type](#type-4)
-  - [FrameworkEnvironment.PreferredGraphicsRenderer](#frameworkenvironmentpreferredgraphicsrenderer)
-    - [Type](#type-5)
-  - [FrameworkEnvironment.StagingBufferType](#frameworkenvironmentstagingbuffertype)
-    - [Type](#type-6)
-  - [FrameworkEnvironment.VertexBufferCount](#frameworkenvironmentvertexbuffercount)
-    - [Type](#type-7)
-  - [FrameworkEnvironment.NoStructuredBuffers](#frameworkenvironmentnostructuredbuffers)
-    - [Type](#type-8)
+- [Class FrameworkEnvironment #](#class-frameworkenvironment-)
+  - [Namespace](#namespace)
+  - [Syntax](#syntax)
+  - [Properties](#properties)
+    - [StartupExecutionMode](#startupexecutionmode)
+      - [Declaration](#declaration)
+      - [Type](#type)
+    - [NoTestTimeout](#notesttimeout)
+      - [Declaration](#declaration-1)
+      - [Type](#type-1)
+    - [ForceTestGC](#forcetestgc)
+      - [Declaration](#declaration-2)
+      - [Type](#type-2)
+    - [FrameStatisticsViaTouch](#framestatisticsviatouch)
+      - [Declaration](#declaration-3)
+      - [Type](#type-3)
+    - [PreferredGraphicsSurface](#preferredgraphicssurface)
+      - [Declaration](#declaration-4)
+      - [Type](#type-4)
+    - [PreferredGraphicsRenderer](#preferredgraphicsrenderer)
+      - [Declaration](#declaration-5)
+      - [Type](#type-5)
+    - [StagingBufferType](#stagingbuffertype)
+      - [Declaration](#declaration-6)
+      - [Type](#type-6)
+    - [VertexBufferCount](#vertexbuffercount)
+      - [Declaration](#declaration-7)
+      - [Type](#type-7)
+    - [NoStructuredBuffers](#nostructuredbuffers)
+      - [Declaration](#declaration-8)
+      - [Type](#type-8)
 
-# Property
-## FrameworkEnvironment[.StartupExecutionMode](https://github.com/ppy/osu-framework/blob/master/osu.Framework/FrameworkEnvironment.cs#L11)
+
+# Class FrameworkEnvironment [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/FrameworkEnvironment.cs#L9)
+
+
+## Namespace
+osu.Framework
+
+
+## Syntax
+```csharp
+public static class FrameworkEnvironment
+```
+
+
+## Properties
+
+### StartupExecutionMode
+#### Declaration
 ```csharp
 public static ExecutionMode? StartupExecutionMode { get; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
-|[ExecutionMode?](./Platform/README.md#executionmode)|シングルスレッドかマルチスレッドか|
+|[ExecutionMode?]()|シングルスレッドかマルチスレッドか|
 
-## FrameworkEnvironment[.NoTestTimeout](https://github.com/ppy/osu-framework/blob/master/osu.Framework/FrameworkEnvironment.cs#L12)
+---
+### NoTestTimeout
+#### Declaration
 ```csharp
 public static bool NoTestTimeout { get; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |bool||
 
-## FrameworkEnvironment[.ForceTestGC](https://github.com/ppy/osu-framework/blob/master/osu.Framework/FrameworkEnvironment.cs#L13)
+---
+### ForceTestGC
+#### Declaration
 ```csharp
 public static bool ForceTestGC { get; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |bool||
 
-## FrameworkEnvironment[.FrameStatisticsViaTouch](https://github.com/ppy/osu-framework/blob/master/osu.Framework/FrameworkEnvironment.cs#L14)
+---
+### FrameStatisticsViaTouch
+#### Declaration
 ```csharp
 public static bool FrameStatisticsViaTouch { get; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |bool||
 
-## FrameworkEnvironment[.PreferredGraphicsSurface](https://github.com/ppy/osu-framework/blob/master/osu.Framework/FrameworkEnvironment.cs#L15)
+---
+### PreferredGraphicsSurface
+#### Declaration
 ```csharp
 public static GraphicsSurfaceType? PreferredGraphicsSurface { get; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |[GraphicsSurfaceType?](./Platform/README.md#graphicssurfacetype)|[IWindow](./Platform/README.md#iwindow)のグラフィックサーフェス。|
 
-## FrameworkEnvironment[.PreferredGraphicsRenderer](https://github.com/ppy/osu-framework/blob/master/osu.Framework/FrameworkEnvironment.cs#L16)
+---
+### PreferredGraphicsRenderer
+#### Declaration
 ```csharp
 public static string? PreferredGraphicsRenderer { get; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |string?||
 
-## FrameworkEnvironment[.StagingBufferType](https://github.com/ppy/osu-framework/blob/master/osu.Framework/FrameworkEnvironment.cs#L17)
+---
+### StagingBufferType
+#### Declaration
 ```csharp
 public static int? StagingBufferType { get; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |int?||
 
-## FrameworkEnvironment[.VertexBufferCount](https://github.com/ppy/osu-framework/blob/master/osu.Framework/FrameworkEnvironment.cs#L18)
+---
+### VertexBufferCount
+#### Declaration
 ```csharp
 public static int? VertexBufferCount { get; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |int?||
 
-## FrameworkEnvironment[.NoStructuredBuffers](https://github.com/ppy/osu-framework/blob/master/osu.Framework/FrameworkEnvironment.cs#L19)
+---
+### NoStructuredBuffers
+#### Declaration
 ```csharp
 public static bool NoStructuredBuffers { get; }
 ```
-### Type
+#### Type
 |Name|Description|
 |:-|:-|
 |bool||
