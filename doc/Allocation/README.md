@@ -6,7 +6,7 @@
   - [`IReadOnlyDependencyContainer` #](#ireadonlydependencycontainer-)
   - [`ISourceGeneratedDependencyActivator` #](#isourcegenerateddependencyactivator-)
   - [`ISourceGeneratedLongRunningLoadCache` #](#isourcegeneratedlongrunningloadcache-)
-- [Class](#class)
+- [クラス](#クラス)
   - [`BackgroundDependencyLoaderAttribute` #](#backgrounddependencyloaderattribute-)
   - [`CachedAttribute` #](#cachedattribute-)
   - [`NullDependencyException` #](#nulldependencyexception-)
@@ -40,6 +40,7 @@
   - [`CacheDependencyDelegate` #](#cachedependencydelegate-)
 
 
+
 # インターフェース
 ## `IDependencyActivatorRegistry` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/IDependencyActivator.cs#L11)
 ```csharp
@@ -67,7 +68,8 @@ public interface ISourceGeneratedLongRunningLoadCache
 ```
 
 
-# Class
+
+# クラス
 ## `BackgroundDependencyLoaderAttribute` [#](./BackgroundDependencyLoaderAttribute.md)
 メソッドを[Graphics.Drawable]()の (非同期の可能性がある) 初期化メソッドとしてマークし、メソッドのパラメーターを介して依存関係を自動的に挿入できるようにする。
 ```csharp
@@ -84,38 +86,47 @@ public class CachedAttribute : Attribute
 public sealed class NullDependencyException : InvalidOperationException
 ```
 
-## `CachedModelDependencyContainer<TModel>` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/CachedModelDependencyContainer.cs#L21)
+## `CachedModelDependencyContainer<TModel>` [#](./CachedModelDependencyContainer.md)
+`TModel`とそれに含まれるメンバーを依存関係として[CachedAttribute]()でアタッチしてキャッシュする[DependencyContainer]()。<br>
+ユーザーは、`TModel`型を直接クエリしてモデルをクエリしたり、[TModel]()型を親として指定してモデルの依存関係をクエリしたりする。
 ```csharp
 public class CachedModelDependencyContainer<TModel> : IReadOnlyDependencyContainer
         where TModel : class, IDependencyInjectionCandidate, new()
 ```
 
-## `MultipleDependencyLoaderMethodsException` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/DependencyActivator.cs#L154)
+## `MultipleDependencyLoaderMethodsException` [#](./DependencyActivator.md#class-multipledependencyloadermethodsexception)
+1 つのオブジェクトに複数の[BackgroundDependencyLoaderAttribute]()が存在する場合に発生する。
 ```csharp
 public class MultipleDependencyLoaderMethodsException : Exception
 ```
 
-## `DependencyNotRegisteredException` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/DependencyActivator.cs#L168)
+## `DependencyNotRegisteredException` [#](./DependencyActivator.md#class-dependencynotregisteredexception)
 ```csharp
 public class DependencyNotRegisteredException : Exception
 ```
+オブジェクトが依存関係の解決を要求したが、依存関係が存在しない場合に発生する。<br>
+これは、親[CompositeDrawable]()から[CompositeDrawable.CreateChildDependency]()または[CachedAttribute]()によって依存関係が登録されていないことが原因で発生する。
 
-## `AccessModifierNotAllowedForMemberException` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/DependencyActivator.cs#L179)
+## `AccessModifierNotAllowedForMemberException` [#](./DependencyActivator.md#accessmodifiernotallowedformemberexception)
+許容できないアクセス修飾子を持つメンバーに対して依存関係に関連した操作が発生したときに発生する。
 ```csharp
 public abstract class AccessModifierNotAllowedForMemberException : InvalidOperationException
 ```
 
-## `AccessModifierNotAllowedForCachedValueException` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/DependencyActivator.cs#L190)
+## `AccessModifierNotAllowedForCachedValueException` [#](./DependencyActivator.md#class-accessmodifiernotallowedforcachedvalueexception)
+[CachedAttribute]()が添付された非プライベートおよび非読み取り専用フィールドをキャッシュしようとしたときに発生する。
 ```csharp
 public class AccessModifierNotAllowedForCachedValueException : AccessModifierNotAllowedForMemberException
 ```
 
-## `AccessModifierNotAllowedForLoaderMethodException` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/DependencyActivator.cs#L202)
+## `AccessModifierNotAllowedForLoaderMethodException` [#](./DependencyActivator.md#class-accessmodifiernotallowedforloadermethodexception)
+[BackgroundDependencyLoaderAttribute]()が添付されたメソッドがプライベートではない場合に発生する。
 ```csharp
 public class AccessModifierNotAllowedForLoaderMethodException : AccessModifierNotAllowedForMemberException
 ```
 
-## `AccessModifierNotAllowedForPropertySetterException` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/DependencyActivator.cs#L213)
+## `AccessModifierNotAllowedForPropertySetterException` [#](./DependencyActivator.md#class-accessmodifiernotallowedforpropertysetterexception)
+[ResolvedAttribute]()が添付されたプロパティのセッターがプライベートではない場合に発生する。
 ```csharp
 public class AccessModifierNotAllowedForPropertySetterException : AccessModifierNotAllowedForMemberException
 ```
@@ -180,12 +191,6 @@ public class TripleBuffer<T>
 
 
 
-
-
-
-
-
-
 # 構造体
 ## `CacheInfo` [#](./CacheInfo.md)
 ```csharp
@@ -209,10 +214,6 @@ public readonly struct ValueInvokeOnDisposal<T> : IDisposable
 
 
 
-
-
-
-
 # 列挙型
 ## `UsageType` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/ObjectUsage.cs#L34)
 ```csharp
@@ -221,13 +222,8 @@ public enum UsageType
 
 
 
-
-
-
-
-
 # デリゲート
-## `InjectDependencyDelegate` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/DependencyActivator.cs#L221)
+## `InjectDependencyDelegate` [#](./DependencyActivator.md#delegate-injectdependencydelegate)
 ```csharp
 public delegate void InjectDependencyDelegate(object target, IReadOnlyDependencyContainer dependencies);
 ```
