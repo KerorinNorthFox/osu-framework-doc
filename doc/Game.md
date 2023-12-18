@@ -95,6 +95,7 @@
       - [Arguments](#arguments-9)
 
 
+
 # Class Game [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Game.cs#L31)
 
 

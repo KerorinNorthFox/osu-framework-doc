@@ -33,6 +33,7 @@
       - [Type](#type-8)
 
 
+
 # Class FrameworkEnvironment [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/FrameworkEnvironment.cs#L9)
 
 
