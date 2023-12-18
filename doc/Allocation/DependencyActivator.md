@@ -15,7 +15,7 @@
   - [Constructor](#constructor-1)
       - [Declaration](#declaration-1)
       - [Arguments](#arguments-1)
-  - [`AccessModifierNotAllowedForMemberException` #](#accessmodifiernotallowedformemberexception-)
+- [Class AccessModifierNotAllowedForMemberException #](#class-accessmodifiernotallowedformemberexception-)
   - [Namespace](#namespace-3)
   - [Implements](#implements-2)
   - [Syntax](#syntax-3)
@@ -53,6 +53,7 @@
       - [Arguments](#arguments-7)
 
 
+
 # Class DependencyActivator [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/DependencyActivator.cs#L26)
 オブジェクトの依存関係をマージし、依存関係をオブジェクトに注入するメソッドを提供するヘルパー クラス。<br>
 依存関係をオブジェクトにマージ/注入するプロセスは、最も派生したものから最も派生したものへと「ボトムアップ」方式で行われる。<br>
@@ -72,6 +73,8 @@ internal class DependencyActivator
 ```
 
 
+
+---
 # Class MultipleDependencyLoaderMethodsException [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/DependencyActivator.cs#L154)
 1 つのオブジェクトに複数の[BackgroundDependencyLoaderAttribute]()が存在する場合に発生する。
 
@@ -139,7 +142,7 @@ public DependencyNotRegisteredException(Type type, Type requestedType)
 
 
 ---
-## `AccessModifierNotAllowedForMemberException` [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/DependencyActivator.cs#L179)
+# Class AccessModifierNotAllowedForMemberException [#](https://github.com/ppy/osu-framework/blob/master/osu.Framework/Allocation/DependencyActivator.cs#L179)
 許容できないアクセス修飾子を持つメンバーに対して依存関係に関連した操作が発生したときに発生する。
 
 
