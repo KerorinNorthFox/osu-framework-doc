@@ -1,7 +1,7 @@
 # osu.Framework Doc
 - [osu.Framework Doc](#osuframework-doc)
 - [インターフェース](#インターフェース)
-- [Class](#class)
+- [クラス](#クラス)
 
 # インターフェース
 |Name|Link|Description|
@@ -11,7 +11,7 @@
 
 
 
-# Class
+# クラス
 |Name|Link|Description|
 |:-|:-|:-|
 |`FrameworkEnvironment`|[link](./FrameworkEnvironment.md)||
