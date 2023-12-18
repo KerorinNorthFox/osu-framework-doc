@@ -18,7 +18,10 @@
       - [Declaration](#declaration-4)
       - [Type](#type-2)
   - [Methods](#methods)
-    - [](#)
+    - [GetTarget](#gettarget)
+      - [Declaration](#declaration-5)
+      - [Arguments](#arguments-2)
+      - [Return](#return)
 
 
 
@@ -104,4 +107,19 @@ public bool IsAllocated => handle.IsAllocated;
 
 ## Methods
 
-### 
+### GetTarget
+参照されているオブジェクトを取得する。<br>
+成功した場合は`true`を返し、`target`に参照されたオブジェクトを設定する。<br>
+ハンドルが割り当てられていないか、ターゲットの型が`T`でない場合は`false`を返す。
+#### Declaration
+```csharp
+public bool GetTarget(out T target)
+```
+#### Arguments
+|Name|Type|Description|
+|:-|:-|:-|
+|`target`|T|このパラメータに対象のオブジェクトを設定する。|
+#### Return
+|Type|Description|
+|:-|:-|
+|bool||
